@@ -8,11 +8,6 @@ The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
 * Reflect on your work in a written report
 
-
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
-
 ---
 
 ### Reflection
@@ -31,10 +26,6 @@ My pipeline consisted of 6 steps.
 #### About the draw_lines() function:
 I spent lot of time on this. 
 The basic idea is to find left or right line based on each line's slope. Firstly, I tried to find the left/right most points, and average them to draw the lines. But that didn't work because some points are too far from the lines. So I changed algorithm to find all points's average instead of the most right or left ones. But it made my code so complecated. So finally I found a method `np.polyfit`, which is so greate that saves lot of effort. I used it to find line's params, then calculated points that on the edges of our area.
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![alt text][image1]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
